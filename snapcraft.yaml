@@ -11,8 +11,10 @@ type: gadget
 architectures:
   - build-on: amd64
     run-on: armhf
+
 confinement: strict
 grade: stable
+
 parts:
   uboot-pi2:
     plugin: nil
@@ -123,6 +125,7 @@ parts:
       mkdir -p initrd/bin
       cp psplash initrd/bin
       mkdir -p $SNAPCRAFT_PART_INSTALL/boot-assets
+      tar xvf ../../../modules.tgz
       cd initrd && find . | cpio --quiet -o -H newc| lzma >>$SNAPCRAFT_PART_INSTALL/boot-assets/psplash.img
     build-packages:
       - libgdk-pixbuf2.0-dev
@@ -138,6 +141,9 @@ parts:
       - on amd64 to armhf:
         - gcc-arm-linux-gnueabihf:amd64
 
+hooks:
+  prepare-device:
+    plugs: [ hostname-control ]
 
 slots:
   bcm-gpio-0:

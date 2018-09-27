@@ -1,7 +1,7 @@
 device-tree: bcm2709-rpi-2-b
-#connections:
-#  - plug: pKicqh8BMdA6Y6jbtWYBdI2QwhRH4v6T:wayland-socket-dir
-#    slot: rW4inp7UbJb1YBxWr6SVebxa3Yv7K1Vm:wayland-socket-dir
+connections:
+    - plug: pt05b6rEkLrXSaPMfJaAZoKqiAZfmmbQ:hostname-control
+    - plug: pKicqh8BMdA6Y6jbtWYBdI2QwhRH4v6T:hardware-observe
 volumes:
   pi-kiosk:
     schema: mbr
@@ -14,3 +14,13 @@ volumes:
         content:
           - source: boot-assets/
             target: /
+
+defaults:
+  99T7MUlRhtI3U0QFgl5mXXESAiSwt776:
+    service:
+      rsyslog:
+        disable: true
+  pKicqh8BMdA6Y6jbtWYBdI2QwhRH4v6T:
+    hidecursor: true
+    resettime: 0
+    url: http://localhost:9400/receiver
