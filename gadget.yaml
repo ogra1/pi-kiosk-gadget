@@ -1,7 +1,17 @@
 device-tree: bcm2709-rpi-2-b
 connections:
-    - plug: pt05b6rEkLrXSaPMfJaAZoKqiAZfmmbQ:hostname-control
-    - plug: pKicqh8BMdA6Y6jbtWYBdI2QwhRH4v6T:hardware-observe
+    # dashkiosk-image-config
+    - plug: c7XjsFlacAz0g94aL5Ebgf3G8Uo8wIpm:avahi-control
+      slot: dVK2PZeOLKA7vf1WPCap9F8luxTk9Oll:avahi-control
+    - plug: c7XjsFlacAz0g94aL5Ebgf3G8Uo8wIpm:hostname-control
+    - plug: c7XjsFlacAz0g94aL5Ebgf3G8Uo8wIpm:time-control
+    - plug: c7XjsFlacAz0g94aL5Ebgf3G8Uo8wIpm:timeserver-control
+    - plug: c7XjsFlacAz0g94aL5Ebgf3G8Uo8wIpm:timezone-control
+    # dashkiosk-client-browser
+    - plug: hBB9l3miabfAKr2Dmnzd5RgzmEbMQVbj:browser-support
+    - plug: hBB9l3miabfAKr2Dmnzd5RgzmEbMQVbj:avahi-observe
+      slot: dVK2PZeOLKA7vf1WPCap9F8luxTk9Oll:avahi-observe
+    - plug: hBB9l3miabfAKr2Dmnzd5RgzmEbMQVbj:hardware-observe
 volumes:
   pi-kiosk:
     schema: mbr
@@ -20,7 +30,6 @@ defaults:
     service:
       rsyslog:
         disable: true
-  pKicqh8BMdA6Y6jbtWYBdI2QwhRH4v6T:
-    hidecursor: true
-    resettime: 0
-    url: http://localhost:9400/receiver
+  # dashkiosk
+  8b5l0bQquHiPTkpmjhhJIACHuMRK1aex:
+    port: 80
