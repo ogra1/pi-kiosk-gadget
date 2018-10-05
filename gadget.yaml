@@ -16,6 +16,7 @@ connections:
     - plug: hBB9l3miabfAKr2Dmnzd5RgzmEbMQVbj:avahi-observe
       slot: dVK2PZeOLKA7vf1WPCap9F8luxTk9Oll:avahi-observe
     - plug: hBB9l3miabfAKr2Dmnzd5RgzmEbMQVbj:hardware-observe
+    - plug: hBB9l3miabfAKr2Dmnzd5RgzmEbMQVbj:process-control
 volumes:
   pi-kiosk:
     schema: mbr
