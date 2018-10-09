@@ -33,6 +33,7 @@ parts:
       - bison
       - build-essential
       - device-tree-compiler
+      - flex
       - libpython2.7-dev
       - python-minimal
       - gcc-arm-linux-gnueabihf
@@ -57,6 +58,7 @@ parts:
       - bison
       - build-essential
       - device-tree-compiler
+      - flex
       - html2text
       - libpython2.7-dev
       - python-minimal
