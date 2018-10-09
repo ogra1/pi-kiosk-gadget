@@ -47,7 +47,7 @@ parts:
       TCHAINVER="$(wget -q -O - \
                  https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/| \
                  html2text -width 200|grep 'x86_64_arm-linux-gnueabihf.tar.xz '|cut -d' ' -f2)"
-      wget https://releases.linaro.org/components/toolchain/binaries/latest/arm-linux-gnueabihf/$TCHAINVER
+      wget https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/$TCHAINVER
       tar xf $TCHAINVER
       mv $(echo $TCHAINVER|sed 's/.tar.xz$//') toolchain
       CROSS_COMPILE=$(pwd)/toolchain/bin/arm-linux-gnueabihf- make
