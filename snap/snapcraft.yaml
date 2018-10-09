@@ -131,6 +131,7 @@ parts:
       cd initrd && find . | cpio --quiet -o -H newc| lzma >>$SNAPCRAFT_PART_INSTALL/boot-assets/psplash.img
     build-packages:
       - libgdk-pixbuf2.0-dev
+      - libc6-dev-armhf-cross
       - automake
       - autoconf
       - gcc
