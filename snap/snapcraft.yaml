@@ -140,8 +140,7 @@ parts:
       - cpio
       - findutils
       - xz-utils
-      - on amd64 to armhf:
-        - gcc-arm-linux-gnueabihf:amd64
+      - gcc-arm-linux-gnueabihf
 
 hooks:
   prepare-device:
