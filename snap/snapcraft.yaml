@@ -30,6 +30,7 @@ parts:
       ln -s uboot.env $SNAPCRAFT_PART_INSTALL/uboot.conf
     build-packages:
       - bc
+      - bison
       - build-essential
       - device-tree-compiler
       - libpython2.7-dev
@@ -54,6 +55,7 @@ parts:
       cp u-boot.bin $SNAPCRAFT_PART_INSTALL/boot-assets/uboot3.bin
     build-packages:
       - bc
+      - bison
       - build-essential
       - device-tree-compiler
       - html2text
