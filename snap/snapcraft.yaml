@@ -127,7 +127,6 @@ parts:
       mkdir -p initrd/bin
       cp psplash initrd/bin
       mkdir -p $SNAPCRAFT_PART_INSTALL/boot-assets
-      tar xvf ../../../modules.tgz
       cd initrd && find . | cpio --quiet -o -H newc| lzma >>$SNAPCRAFT_PART_INSTALL/boot-assets/psplash.img
     build-packages:
       - libgdk-pixbuf2.0-dev
