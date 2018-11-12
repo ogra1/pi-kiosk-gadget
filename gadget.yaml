@@ -63,3 +63,6 @@ defaults:
   # dashkiosk
   8b5l0bQquHiPTkpmjhhJIACHuMRK1aex:
     port: 80
+  # mir-kiosk
+  rW4inp7UbJb1YBxWr6SVebxa3Yv7K1Vm:
+    cursor: none
