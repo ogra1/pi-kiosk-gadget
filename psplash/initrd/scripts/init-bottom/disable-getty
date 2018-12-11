@@ -17,12 +17,13 @@ esac
 #
 SYSTEMDDIR="/root/writable/system-data/etc/systemd"
 JOBDIR="${SYSTEMDDIR}/system"
-SERVICENAME="getty@tty1.service"
 
 if ! grep -q " nogetty " /proc/cmdline; then
-    [ -e "${JOBDIR}/getty.target.wants/${SERVICENAME}" ] || ln -s /dev/null "${JOBDIR}/getty.target.wants/${SERVICENAME}"
+	for getty in $(seq 1 7); do
+		ln -s /dev/null ${JOBDIR}/getty.target.wants/getty@tty${getty}.service
+	done
 else
-	rm -f "${JOBDIR}/getty.target.wants/${SERVICENAME}" || true
+	rm -f "${JOBDIR}/getty.target.wants/getty@tty"?".service" || true
 fi
 
 SERVICENAME="end.psplash.service"
