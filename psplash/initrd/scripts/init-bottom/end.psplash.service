@@ -5,6 +5,7 @@ After=getty.target
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/pkill psplash
+ExecStartPost=/bin/sh -c "/bin/cat /dev/zero >/dev/fb0"
 
 [Install]
 WantedBy=getty.target
