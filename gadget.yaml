@@ -42,8 +42,6 @@ connections:
       slot: dVK2PZeOLKA7vf1WPCap9F8luxTk9Oll:avahi-observe
     - plug: hBB9l3miabfAKr2Dmnzd5RgzmEbMQVbj:hardware-observe
     - plug: hBB9l3miabfAKr2Dmnzd5RgzmEbMQVbj:process-control
-    # rpi-iptv-player
-    - plug: pUgMkemkteR0lgps8vgc9iVKZnaHSsrn:framebuffer
 volumes:
   pi-kiosk:
     schema: mbr
