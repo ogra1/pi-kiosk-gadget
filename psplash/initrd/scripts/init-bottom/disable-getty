@@ -28,7 +28,7 @@ fi
 SERVICENAME="end.psplash.service"
 if [ ! -e "${JOBDIR}/${SERVICENAME}" ]; then
 	cp "/scripts/init-bottom/${SERVICENAME}" "${JOBDIR}/${SERVICENAME}"
-	ln -s "/etc/systemd/system/${SERVICENAME}" "${JOBDIR}/multi-user.target.wants/${SERVICENAME}"
+	ln -s "/etc/systemd/system/${SERVICENAME}" "${JOBDIR}/getty.target.wants/${SERVICENAME}"
 fi
 
 # HACK to work around missing support for "connections:" in gadget.yaml
