@@ -70,7 +70,7 @@ parts:
       - uboot-pi2
       - uboot-pi3
     override-build: |
-      git clone --depth=1 https://github.com/raspberrypi/firmware.git -b "1.20180924"
+      git clone --depth=1 https://github.com/raspberrypi/firmware.git -b "1.20190709"
       mkdir -p $SNAPCRAFT_PART_INSTALL/boot-assets
       for file in fixup start bootcode LICENCE COPYING; do
         cp firmware/boot/${file}* $SNAPCRAFT_PART_INSTALL/boot-assets
@@ -91,7 +91,7 @@ parts:
     override-build: |
       PACKAGES="http://ports.ubuntu.com/ubuntu-ports/dists/xenial-updates/universe/binary-armhf/Packages.gz"
       PKGPATH="$(wget -q -O- $PACKAGES|zcat|grep-dctrl linux-raspi2 |\
-        grep linux-image|grep Filename|tail -1| sed 's/^Filename: //')"
+        grep linux-modules|grep Filename|tail -1| sed 's/^Filename: //')"
       wget http://ports.ubuntu.com/ubuntu-ports/$PKGPATH
       dpkg -x $(basename $PKGPATH) unpack/
       mkdir -p $SNAPCRAFT_PART_INSTALL/boot-assets
